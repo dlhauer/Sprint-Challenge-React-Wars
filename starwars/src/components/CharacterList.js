@@ -9,6 +9,7 @@ const CharacterContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 100px;
 `;
 
 function getRandPageNumber() {
@@ -31,7 +32,7 @@ function CharacterList() {
   // console.log(characters);
       
   return (
-    <div>
+    <div className='container'>
       <TheButton function={setPage} page={getRandPageNumber} text='Click for a random page of characters!'></TheButton>
       <CharacterContainer>
           { characters.map( (item, index) => {

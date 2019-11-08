@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
-  background-color: steelblue;
+  background-color: midnightblue;
   padding: 10px;
   width: 220px;
   color: white;
@@ -23,7 +23,7 @@ function CharacterCard(props) {
   return (
     <Card>
       <h2>{props.name}</h2>
-      <p>Born in: {props.birth}</p>
+      <p>Year of birth: {props.birth}</p>
       <p>Gender: {props.gender}</p>
       <p>Mass: {props.mass}</p>
     </Card>

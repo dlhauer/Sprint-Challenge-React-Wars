@@ -13,3 +13,15 @@ html {
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+
+h1 {
+  font-size: 7rem;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
