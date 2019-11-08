@@ -10,17 +10,19 @@ const CharacterContainer = styled.div`
   justify-content: center;
 `;
 
+function getRandPageNumber() {
+  return Math.floor( Math.random() * 8 + 1)
+}
+
 function CharacterList() {
 
   const [characters, setCharacters] = useState([]);
-  const [page, setPage] = useState( Math.floor( Math.random() * 8 + 1) ); //set page to random number from 1 to 9
+  const [page, setPage] = useState( getRandPageNumber() ); //set page to random number from 1 to 9
 
   useEffect( () => {
     axios.get(`https://swapi.co/api/people/?page=${page}`)   
       .then( response => {
-        // console.log(response.data.results);
         setCharacters(response.data.results);
-        // console.log(characters);
       })
       .catch(error => console.log('Oh no! ', error));
   }, []);
@@ -30,7 +32,6 @@ function CharacterList() {
   return (
 
     <CharacterContainer>
-      {/* <div className='entry'> */}
         { characters.map( (item, index) => {
           return <CharacterCard 
             key={index}
@@ -39,7 +40,6 @@ function CharacterList() {
             gender={item.gender}
             mass={item.mass} />
         }) }
-      {/* </div> */}
     </CharacterContainer>
   );
 }
