@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import CharacterCard from './CharacterCard';
+import TheButton from './TheButton';
 import axios from 'axios';
 
 const CharacterContainer = styled.div`
@@ -25,22 +26,24 @@ function CharacterList() {
         setCharacters(response.data.results);
       })
       .catch(error => console.log('Oh no! ', error));
-  }, []);
+  },[page]);
 
-  console.log(characters);
+  // console.log(characters);
       
   return (
-
-    <CharacterContainer>
-        { characters.map( (item, index) => {
-          return <CharacterCard 
-            key={index}
-            name={item.name}
-            birth={item.birth_year}
-            gender={item.gender}
-            mass={item.mass} />
-        }) }
-    </CharacterContainer>
+    <div>
+      <TheButton function={setPage} page={getRandPageNumber} text='Click for a random page of characters!'></TheButton>
+      <CharacterContainer>
+          { characters.map( (item, index) => {
+            return <CharacterCard 
+              key={index}
+              name={item.name}
+              birth={item.birth_year}
+              gender={item.gender}
+              mass={item.mass} />
+          }) }
+      </CharacterContainer>
+    </div>
   );
 }
 

@@ -11,6 +11,7 @@ const Card = styled.div`
   border: 5px solid white;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.6 rem;
 
   h2 {
     letter-spacing: 1px;
