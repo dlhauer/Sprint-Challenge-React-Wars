@@ -1,0 +1,33 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const Card = styled.div`
+  background-color: midnightblue;
+  padding: 10px;
+  width: 220px;
+  color: white;
+  text-align: left;
+  margin: 10px;
+  border: 5px solid white;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+
+  h2 {
+    letter-spacing: 1px;
+    font-size: 2.3rem;
+  }
+`;
+
+function CharacterCard(props) {
+  return (
+    <Card>
+      <h2>{props.name}</h2>
+      <p>Year of birth: {props.birth}</p>
+      <p>Gender: {props.gender}</p>
+      <p>Mass: {props.mass}</p>
+    </Card>
+  )
+}
+
+export default CharacterCard;
