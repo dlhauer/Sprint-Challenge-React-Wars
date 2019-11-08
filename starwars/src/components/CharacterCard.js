@@ -11,10 +11,11 @@ const Card = styled.div`
   border: 5px solid white;
   border-radius: 10px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.6 rem;
+  font-size: 1.6rem;
 
   h2 {
     letter-spacing: 1px;
+    font-size: 2.3rem;
   }
 `;
 
